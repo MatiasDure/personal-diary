@@ -3,8 +3,9 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "build": "webpack",
-    "start": "node -r dotenv/config ./bin/www"
+    "devbuild": "webpack",
+    "devstart": "node -r dotenv/config ./bin/www",
+    "start" : "node .bin/www"
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^6.4.2",

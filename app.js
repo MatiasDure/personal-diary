@@ -22,7 +22,7 @@ app.set('views', path.join(__dirname, 'views/pages'));
 app.set('view engine', 'ejs');
 
 app.use(session({
-  secret: "cats",
+  secret: process.env.SECRET,
   resave: false,
   saveUninitialized: true
 }));
