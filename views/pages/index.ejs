@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include("../partials/head.ejs"); %>
+  <link rel="stylesheet" href="stylesheets/style.css">
+</head>
+<body>
+  <header>
+    <%- include("../partials/header.ejs") %>
+  </header>
+  <main>
+    <% if(currentUser){ %>
+    <div>
+      <h1><%= currentUser.username%></h1>
+      <p>Welcome to templating using EJS</p>
+      <p>There are <%= user_count%> users subscribed.</p>
+      <p>There are <%= public_post_count%> public posts.</p>
+      <a href="/create_post">Create a new Post</a>
+    </div>
+    <% } else{ %>
+    <div>
+      <h1>Please log in</h1>
+        <form action="" method="POST">
+          <div class="input-control">
+            <input type="text" class="input-control-child" name="username" id="username" placeholder="username" />
+          </div>
+          <div class="input-control">
+            <input type="password" class="input-control-child" name="password" id="password" placeholder="password"/>
+          </div>
+          <div class="input-control">
+            <button type="submit" class="input-control-child form-btn">Log In</button>
+          </div>
+          <hr>
+          <div class="md-input-control">
+            <a class="input-control-child form-btn" href="/sign-up">Create new account</a>
+          </div>
+        </form>
+    </div>
+    <% } %>
+  </main>
+  <footer>
+    <%- include("../partials/footer.ejs") %>
+  </footer>
+</body>
+</html>

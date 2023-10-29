@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include("../partials/head.ejs"); %>
+  <link rel="stylesheet" href="stylesheets/style.css">
+</head>
+<body>
+  <header><%- include("../partials/header.ejs"); %></header>
+  <main>
+    <div>
+      <h1>Sign Up</h1>
+        <form action="" method="POST">
+          <div class="input-control">
+            <input type="email" class="input-control-child" name="email" id="email" placeholder="email" required="true" />
+          </div>
+          <div class="input-control">
+            <input type="text" class="input-control-child" name="username" id="username" placeholder="username" required="true" />
+          </div>
+          <div class="input-control">
+            <input type="password" class="input-control-child" name="password" id="password" placeholder="password" required="true" />
+          </div>
+          <div class="input-control">
+            <button type="submit" class="input-control-child form-btn">Create Account</button>
+          </div>
+        </form>
+    </div>
+  </main>
+  <footer><%- include("../partials/footer.ejs"); %></footer>
+</body>
+</html>

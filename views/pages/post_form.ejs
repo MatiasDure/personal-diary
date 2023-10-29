@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include("../partials/head.ejs"); %>
+  <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+<body>
+  <header>
+    <%- include("../partials/header.ejs") %>
+  </header>
+  <main>
+    <% if(currentUser){ %>
+    <div>
+        <h1>Create Post</h1>
+        <form action="" method="POST">
+            <% let hasPost = post !== undefined %>
+            <textarea name="content" id="content" cols="30" rows="10" placeholder="Express yourself freely."><%= hasPost ? post.content : '' %></textarea>
+            <label>
+              <span>Public: </span>
+              <input type="checkbox" name="isPublic" value="true" <%= hasPost && post.public ? 'checked' : '' %>/>
+            </label>
+            <button type="submit">Submit</button>
+          </form>
+    </div>
+    <% } else{ %>
+    <a href="/">Please log in to create a post</a>
+    <% } %>
+  </main>
+  <footer>
+    <%- include("../partials/footer.ejs") %>
+  </footer>
+</body>
+</html>

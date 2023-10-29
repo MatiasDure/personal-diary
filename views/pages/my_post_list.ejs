@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include("../partials/head.ejs"); %>
+</head>
+<body>
+  <header>
+    <%- include("../partials/header.ejs") %>
+  </header>
+  <main>
+    <% if(currentUser){ %>
+        <div>
+            <h1>Your Posts</h1>
+            <ul>
+                <% for(let i=0; i < post_list.length; i++) { %>
+                    <li>
+                        <p>
+                          <%= post_list[i].content %>
+                        </p>
+                        <div>
+                          <a href="/post/update/<%= post_list[i]._id%>"><i class="fa-solid fa-recycle fa-xl"></i></i></a>
+                          <a href="/post/delete/<%= post_list[i]._id%>"><i class="fa-solid fa-trash-can fa-xl"></i></i></a>
+                        </div>
+                    </li>
+                    <hr>
+                <%}%>
+            </ul>
+        </div>
+    <% } else{ %>
+        <a href="/">Please log in to view your posts</a>
+    <% } %>
+  </main>
+  <footer>
+    <%- include("../partials/footer.ejs") %>
+  </footer>
+</body>
+</html>

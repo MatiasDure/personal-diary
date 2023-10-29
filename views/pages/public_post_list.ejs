@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include("../partials/head.ejs"); %>
+  <link rel="stylesheet" href="stylesheets/style.css">
+</head>
+<body>
+  <header>
+    <%- include("../partials/header.ejs") %>
+  </header>
+  <main>
+        <div>
+            <h1>All Public Posts</h1>
+            <ul>
+                <% for(let i=0; i < post_list.length; i++) { %>
+                    <li>
+                        <p>
+                            <%= post_list[i].content %>
+                        </p>
+                        <p>
+                            author:
+                            <% if(currentUser) { %>
+                                <%= post_list[i].owner.username %>
+                            <%} else{  %>   
+                                <a href="/">Log in to see info.</a>
+                            <%}%>
+                        </p>
+                    </li>
+                    <hr>
+                <%}%>
+            </ul>
+        </div>
+  </main>
+  <footer>
+    <%- include("../partials/footer.ejs") %>
+  </footer>
+</body>
+</html>
