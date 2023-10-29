@@ -35,7 +35,7 @@ exports.post_create_post = asyncHandler(async (req, res, next) => {
 
     await createdPost.save();
 
-    res.redirect("/my_post_list");
+    res.redirect("/my_posts");
 });
 
 exports.post_update_get = asyncHandler(async (req, res, next) => {
