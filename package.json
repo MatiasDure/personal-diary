@@ -5,7 +5,7 @@
   "scripts": {
     "devbuild": "webpack",
     "devstart": "node -r dotenv/config ./bin/www",
-    "start" : "node .bin/www"
+    "start" : "node ./bin/www"
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^6.4.2",
